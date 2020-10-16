@@ -5,7 +5,7 @@ YOGA_VERSION=master
 
 cd "$(dirname "$0")"
 
-wget -q https://github.com/jackwakefield/yoga/archive/$YOGA_VERSION.tar.gz -O $YOGA_VERSION.tar.gz
+wget -q https://github.com/facebook/yoga/archive/$YOGA_VERSION.tar.gz -O $YOGA_VERSION.tar.gz
 tar xzvf $YOGA_VERSION.tar.gz
 
 rm -rf ../pkg/yoga
