@@ -12,3 +12,26 @@ Bindings generated with [c-for-go](https://github.com/xlab/c-for-go).
 
 - Logging (cgo lacks support for variadic parameters)
 - Assert (unnecessary?)
+
+## Tutorial
+```
+
+go get -u github.com/xlab/c-for-go
+
+./scripts/download-yoga.sh
+
+??? sed -i ".bak" "s/jackwakefield/facebook/g" `grep -lr 'jackwakefield' ./pkg/yogoa/`
+
+docker build -t yogoa/watir ./test
+
+c-for-go --ccincl -out ./pkg ./yoga.yml
+
+    vi test/gentest.rb 注释# 52～56
+  
+docker run -i -v $(pwd):/yogoa yogoa/watir ./test/gentest.rb
+
+goimports -w pkg/yogoa/yoga_test.go
+
+go test -v -race ./...
+
+```
